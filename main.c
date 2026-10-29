@@ -4,19 +4,21 @@
 
 int main(void)
 {
-    int i, average;
-    int sum;
+    int i;
     int grade[SIZE];
+    int score[SIZE];
 
-    sum = 0;
     for(i=0; i<SIZE; i++)
     {
-        printf("input student grade.\n");
-        scanf("%d", &grade[i]);
-        sum += grade[i];
+         grade[i] = rand() % 100;
+         printf("grade[%d] : %d\n", i, grade[i]);
     }
-    average = sum / SIZE;
-    printf("Average grade: %d\n", average);
+       
+    for (i=0; i<SIZE; i++)
+        score[i] = grade[i];
+
+    for (i=0; i<SIZE; i++)
+        printf("score[%d] = %d\n", i, score[i]);
 
     return 0;
 }
